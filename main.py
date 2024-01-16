@@ -143,6 +143,7 @@ else:
 
 '''
 
+
 class Book:
     def __init__(self, title, pages, price):
         self.title = title
@@ -165,4 +166,4 @@ kniha = Book("Harry Potter", 400, 10)
 print(kniha.price)
 kniha.price = 20
 print(kniha.price)
-#kniha.price = -10
+kniha.price = -10
