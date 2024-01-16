@@ -66,7 +66,7 @@ kohut = Kohut()
 for zviera in [pes, macka, kohut]:
     print("zviera ma", pocet_noh(zviera), "nohy")
 
-'''
+
 
 class Stadion:
     def __init__(self, stadion_name, date_of_opening, country,city,  seating_capacity):
@@ -113,3 +113,56 @@ print(stadiony[0].stadion_name)
 
 
 
+
+
+
+class Stadium:
+    def __init__(self, name, capacity):
+        self.name = name
+        self.capacity = capacity
+
+    def __len__(self):
+        return self.capacity
+
+    def __add__(self, other):
+        return Stadium(self.name + " " + other.name, self.capacity + other.capacity)
+
+    def __eq__(self, other):
+        return self.name == other.name and self.capacity == other.capacity
+
+
+stadium1 = Stadium("Etihad Stadium", 11222)
+stadium2 = Stadium("Etihad Stadium", 11222)
+
+print(stadium1)
+print(stadium2)
+if stadium1 == stadium2:
+    print("rovnaky")
+else:
+    print("rozny")
+
+'''
+
+class Book:
+    def __init__(self, title, pages, price):
+        self.title = title
+        self.pages = pages
+        self.__price = price
+
+    @property
+    def price(self):
+        return self.__price
+
+    @price.setter
+    def price(self, value):
+        if value >= 0:
+            self.__price = value
+        else:
+            raise ValueError("Price is negative")
+
+
+kniha = Book("Harry Potter", 400, 10)
+print(kniha.price)
+kniha.price = 20
+print(kniha.price)
+#kniha.price = -10
