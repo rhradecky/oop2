@@ -91,6 +91,7 @@ trencin = Stadion( "Stadion H", "2011", "Slovensko","Trencin", 9000)
 
 
 
+
 stadiony = [bratislava, kosice, trnava, banska, trencin]
 stadiony.sort(key=lambda i: i.seating_capacity, reverse=True)
 print("asd")
